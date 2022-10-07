@@ -11,15 +11,12 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 def main(n1=3,n2=5,upper_limit=1000):
-
     a = [(i+1)*n1      for i in range(int(((upper_limit-1)-(upper_limit-1)%n1)/n1))]
     b = [(i+1)*n2      for i in range(int(((upper_limit-1)-(upper_limit-1)%n2)/n2))]
-    c = [(i+1)*(n1*n2) for i in range(int(((upper_limit-1)-(upper_limit-1)%(n1*n2))/(n1*n2)))]
-    sum_of_multiples = sum(a)+sum(b)-sum(c)
-    
+    sum_of_multiples = sum(set(a + b))
     print(f'The sum of all the multiples of {n1} or {n2} below {upper_limit} is {sum_of_multiples}.')
     return sum_of_multiples
 
 if __name__ == "__main__":
-    
     main()
+
