@@ -16,10 +16,8 @@ def main():
     fib_seq = [1,2]
     while fib_seq[-1] < 4e6:
         fib_seq.append(fib_seq[-2]+fib_seq[-1])
-        print(fib_seq)
         if fib_seq[-3]%2 ==0:
             fib_seq.pop(-3)
-        print(fib_seq)
     fib_seq.pop(-1)
     if fib_seq[-2]%2 == 0:
         fib_seq.pop(-2)
@@ -31,4 +29,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
